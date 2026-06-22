@@ -8,6 +8,21 @@
   <url>
     <loc>https://ismailepereira.github.io/alysson-mattos-site/blog.html</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ismailepereira.github.io/alysson-mattos-site/dor-lombar-repouso-nem-sempre-resolve.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ismailepereira.github.io/alysson-mattos-site/dor-no-joelho-ao-agachar-descer-escada.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ismailepereira.github.io/alysson-mattos-site/fisioterapia-ativa-ou-passiva.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

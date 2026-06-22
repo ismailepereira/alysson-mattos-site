@@ -7,10 +7,11 @@
 
 > **✅ Decisões confirmadas (2026-06-22):** site **one-page + blog**; hospedagem
 > **GitHub Pages** com deploy automático; **autorizada** a reescrita ética do diferencial.
-> **Progresso:** Fase 1 (Fundação) ✅ · Fase 2 (Copy) ✅ · Fase 3 (Build das seções) ✅ —
-> home completa: hero, diferencial, serviços, como funciona, sobre, depoimentos, área
-> (mapa em facade), contato (form→WhatsApp). Repo: github.com/ismailepereira/alysson-mattos-site.
-> **Próxima:** Fase 4 (blog) ou Fase 5 (SEO/a11y).
+> **Progresso:** Fase 1 (Fundação) ✅ · Fase 2 (Copy) ✅ · Fase 3 (Build da home) ✅ ·
+> Fase 4 (Blog) ✅ — índice + 3 artigos (dor lombar, joelho, ativa x passiva) com SEO/FAQ/schema.
+> **No ar:** https://ismailepereira.github.io/alysson-mattos-site/ (Pages via branch gh-pages).
+> Repo: github.com/ismailepereira/alysson-mattos-site.
+> **Próxima:** Fase 5 (SEO técnico + acessibilidade + performance).
 
 ---
 

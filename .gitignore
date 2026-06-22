@@ -1,0 +1,20 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Arquivos de origem pesados do design (mantidos localmente, fora do repo)
+*.psd
+*.ai
+
+# Temporários
+*.log
+*.tmp
+
+# workflow versionado depois (token precisa de escopo workflow)
+.github/

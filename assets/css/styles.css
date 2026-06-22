@@ -1,0 +1,203 @@
+/* =================================================================
+   Alysson Mattos · Fisioterapeuta — Design System
+   Stack: CSS puro (variáveis). Sem build.
+   Paleta extraída da logo oficial.
+   ================================================================= */
+
+/* ---------- 1. Tokens / variáveis ---------- */
+:root {
+  /* Cores da marca */
+  --c-petrol:       #0D3451; /* primária — header, títulos, texto forte */
+  --c-petrol-700:   #0a2840;
+  --c-teal:         #49AAA1; /* secundária — CTA, ícones, detalhes */
+  --c-teal-600:     #3a8f87;
+  --c-teal-100:     #e3f1ef;
+  --c-blue:         #06598C; /* apoio — links, destaques, degradês */
+
+  /* Neutros */
+  --c-bg:           #F6F8F9; /* fundo base */
+  --c-surface:      #ffffff; /* cards, header */
+  --c-text:         #28323A; /* texto corrido */
+  --c-muted:        #5d6b75; /* texto secundário */
+  --c-border:       #e4e9ec;
+
+  /* Tipografia */
+  --font-display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Escala fluida */
+  --fs-hero:  clamp(2.1rem, 5.2vw, 3.5rem);
+  --fs-h2:    clamp(1.6rem, 3.4vw, 2.4rem);
+  --fs-h3:    clamp(1.15rem, 1.8vw, 1.35rem);
+  --fs-body:  1.05rem;
+  --fs-small: 0.9rem;
+
+  /* Espaçamento / forma */
+  --container: 1140px;
+  --gap:       1.5rem;
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 10px 30px -12px rgba(13, 52, 81, .25);
+  --shadow-sm: 0 4px 14px -6px rgba(13, 52, 81, .18);
+  --transition: .25s ease;
+
+  /* Camadas */
+  --z-header: 100;
+  --z-float:  90;
+}
+
+/* ---------- 2. Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--c-text);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: var(--c-blue); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--c-teal-600); }
+ul { list-style: none; }
+:focus-visible { outline: 3px solid var(--c-teal); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- 3. Tipografia ---------- */
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--c-petrol); line-height: 1.15; font-weight: 700; }
+h1 { font-size: var(--fs-hero); font-weight: 800; letter-spacing: -.02em; }
+h2 { font-size: var(--fs-h2); letter-spacing: -.01em; }
+h3 { font-size: var(--fs-h3); }
+p  { margin-bottom: 1rem; }
+.lead { font-size: 1.2rem; color: var(--c-muted); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--c-teal-600); margin-bottom: .6rem; display: inline-block;
+}
+.muted { color: var(--c-muted); }
+
+/* ---------- 4. Layout ---------- */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 1.4rem; }
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.section--tint { background: var(--c-teal-100); }
+.section--petrol { background: var(--c-petrol); color: #dfe8ee; }
+.section--petrol h2, .section--petrol h3 { color: #fff; }
+.section__head { max-width: 680px; margin-bottom: 2.5rem; }
+.section__head.center { margin-inline: auto; text-align: center; }
+.grid { display: grid; gap: var(--gap); }
+.grid--2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+/* ---------- 5. Botões ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+  padding: .85rem 1.6rem; border-radius: 999px; border: 2px solid transparent;
+  cursor: pointer; transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+  text-align: center; line-height: 1;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--whatsapp { background: var(--c-teal); color: #fff; box-shadow: var(--shadow-sm); }
+.btn--whatsapp:hover { background: var(--c-teal-600); color: #fff; }
+.btn--primary { background: var(--c-petrol); color: #fff; }
+.btn--primary:hover { background: var(--c-petrol-700); color: #fff; }
+.btn--outline { background: transparent; border-color: var(--c-petrol); color: var(--c-petrol); }
+.btn--outline:hover { background: var(--c-petrol); color: #fff; }
+.btn--lg { padding: 1.05rem 2rem; font-size: 1.08rem; }
+.btn .ico { width: 20px; height: 20px; fill: currentColor; }
+
+/* ---------- 6. Header / Nav ---------- */
+.header {
+  position: sticky; top: 0; z-index: var(--z-header);
+  background: rgba(255,255,255,.92); backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--c-border);
+}
+.header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.brand { display: flex; align-items: center; gap: .65rem; }
+.brand img { height: 46px; width: auto; }
+.brand__name { font-family: var(--font-display); font-weight: 700; color: var(--c-petrol); font-size: 1.05rem; line-height: 1.1; }
+.brand__name span { display: block; font-size: .72rem; font-weight: 500; color: var(--c-teal-600); letter-spacing: .06em; }
+.nav-list { display: flex; align-items: center; gap: 1.6rem; }
+.nav-list a { color: var(--c-petrol); font-weight: 500; font-size: .97rem; }
+.nav-list a:hover { color: var(--c-teal-600); }
+.nav-cta { margin-left: .4rem; }
+.nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .4rem; }
+.nav-toggle span { display: block; width: 26px; height: 3px; background: var(--c-petrol); border-radius: 2px; transition: var(--transition); }
+.nav-toggle span + span { margin-top: 5px; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav { position: fixed; inset: 64px 0 auto 0; background: var(--c-surface); border-bottom: 1px solid var(--c-border);
+         transform: translateY(-130%); transition: transform var(--transition); box-shadow: var(--shadow); }
+  .nav.open { transform: translateY(0); }
+  .nav-list { flex-direction: column; align-items: stretch; gap: 0; padding: .5rem 1.4rem 1.4rem; }
+  .nav-list li a { display: block; padding: .9rem 0; border-bottom: 1px solid var(--c-border); }
+  .nav-cta { margin: .8rem 0 0; }
+  .nav-cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- 7. Hero ---------- */
+.hero { position: relative; padding-block: clamp(3rem, 7vw, 5.5rem); background:
+        radial-gradient(1200px 500px at 80% -10%, rgba(73,170,161,.16), transparent 60%),
+        radial-gradient(900px 500px at -10% 20%, rgba(6,89,140,.10), transparent 55%); }
+.hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+.hero__title { margin-bottom: 1rem; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.8rem; }
+.hero__media img { border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; aspect-ratio: 4/5; width: 100%; }
+@media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } .hero__media { order: -1; max-width: 420px; } }
+
+/* ---------- 8. Cards ---------- */
+.card {
+  background: var(--c-surface); border: 1px solid var(--c-border);
+  border-radius: var(--radius); padding: 1.7rem; box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.card__icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px;
+              background: var(--c-teal-100); color: var(--c-teal-600); margin-bottom: 1rem; }
+.card__icon svg { width: 28px; height: 28px; }
+.card h3 { margin-bottom: .5rem; }
+
+/* selo de autoridade */
+.badge { display: inline-flex; align-items: center; gap: .5rem; background: var(--c-teal-100);
+         color: var(--c-teal-600); font-weight: 600; font-size: .85rem; padding: .4rem .9rem; border-radius: 999px; }
+
+/* ---------- 9. Footer ---------- */
+.footer { background: var(--c-petrol); color: #b9c7d2; padding-block: 3rem 1.6rem; }
+.footer a { color: #cfe0ea; }
+.footer a:hover { color: #fff; }
+.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.footer__grid h4 { color: #fff; font-size: 1rem; margin-bottom: .9rem; }
+.footer img.logo { height: 54px; margin-bottom: 1rem; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.3rem; display: flex;
+                  flex-wrap: wrap; gap: .6rem 1.2rem; justify-content: space-between; font-size: var(--fs-small); }
+.footer__crefito { font-weight: 600; color: #fff; }
+@media (max-width: 700px){ .footer__grid { grid-template-columns: 1fr; } }
+
+/* ---------- 10. WhatsApp flutuante ---------- */
+.wa-float {
+  position: fixed; right: 18px; bottom: 18px; z-index: var(--z-float);
+  width: 58px; height: 58px; border-radius: 50%; background: #25D366;
+  display: grid; place-items: center; box-shadow: 0 8px 24px -6px rgba(0,0,0,.35);
+  transition: transform var(--transition);
+}
+.wa-float:hover { transform: scale(1.08); }
+.wa-float svg { width: 32px; height: 32px; fill: #fff; }
+
+/* ---------- 11. Animação de revelação ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- 12. Utilitários ---------- */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; } .mt-2 { margin-top: 2rem; }
+.divider-top { border-top: 1px solid var(--c-border); }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--c-petrol); color: #fff; padding: .7rem 1rem; z-index: 200; }
+.skip-link:focus { left: 8px; top: 8px; }

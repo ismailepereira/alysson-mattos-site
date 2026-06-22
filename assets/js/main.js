@@ -39,6 +39,24 @@
   const year = document.querySelector("[data-year]");
   if (year) { year.textContent = new Date().getFullYear(); }
 
+  /* --- Mapa: carrega a iframe do Google só ao clique (performance + privacidade) --- */
+  const mapBtn = document.querySelector(".map-facade__load");
+  if (mapBtn) {
+    mapBtn.addEventListener("click", function () {
+      const facade = mapBtn.closest(".map-facade");
+      const url = facade.getAttribute("data-map");
+      const wrap = document.createElement("div");
+      wrap.className = "map-embed reveal in";
+      const iframe = document.createElement("iframe");
+      iframe.title = "Área de atendimento — Tangará da Serra, MT";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      iframe.src = url;
+      wrap.appendChild(iframe);
+      facade.replaceWith(wrap);
+    });
+  }
+
   /* --- Formulário de contato -> WhatsApp (quando existir) --- */
   // Número internacional do Alysson (DDI 55 + DDD 65).
   const WHATSAPP = "5565999677158";

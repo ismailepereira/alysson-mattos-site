@@ -7,7 +7,10 @@
 
 > **✅ Decisões confirmadas (2026-06-22):** site **one-page + blog**; hospedagem
 > **GitHub Pages** com deploy automático; **autorizada** a reescrita ética do diferencial.
-> **Fase 1 (Fundação) concluída** — estrutura `src/`, design system, logo e favicon aplicados.
+> **Progresso:** Fase 1 (Fundação) ✅ · Fase 2 (Copy) ✅ · Fase 3 (Build das seções) ✅ —
+> home completa: hero, diferencial, serviços, como funciona, sobre, depoimentos, área
+> (mapa em facade), contato (form→WhatsApp). Repo: github.com/ismailepereira/alysson-mattos-site.
+> **Próxima:** Fase 4 (blog) ou Fase 5 (SEO/a11y).
 
 ---
 

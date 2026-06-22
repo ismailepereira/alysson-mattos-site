@@ -92,8 +92,10 @@ p  { margin-bottom: 1rem; }
 .section__head { max-width: 680px; margin-bottom: 2.5rem; }
 .section__head.center { margin-inline: auto; text-align: center; }
 .grid { display: grid; gap: var(--gap); }
-.grid--2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 980px) { .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .grid--2, .grid--3 { grid-template-columns: 1fr; } }
 
 /* ---------- 5. Botões ---------- */
 .btn {
@@ -194,6 +196,71 @@ p  { margin-bottom: 1rem; }
 /* ---------- 11. Animação de revelação ---------- */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- 11b. Serviços / "para quem" ---------- */
+.card__for { display: block; margin-top: .8rem; font-size: .9rem; color: var(--c-teal-600); font-style: italic; }
+
+/* ---------- 11c. Passos (Como funciona) ---------- */
+.steps { counter-reset: step; }
+.step { position: relative; padding-left: .5rem; }
+.step__num { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+             background: var(--c-petrol); color: #fff; font-family: var(--font-display);
+             font-weight: 700; font-size: 1.15rem; margin-bottom: 1rem; }
+
+/* ---------- 11d. Sobre ---------- */
+.sobre__grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+.sobre__photo img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 4/5; object-fit: cover; object-position: center 25%; }
+.selos { display: grid; gap: 1.1rem; margin-top: 1.6rem; }
+.selo h4 { font-size: .98rem; margin-bottom: .5rem; color: var(--c-petrol); display: flex; align-items: center; gap: .5rem; }
+.selo p { margin: 0; font-size: .95rem; color: var(--c-muted); }
+@media (max-width: 860px){ .sobre__grid { grid-template-columns: 1fr; } .sobre__photo { max-width: 380px; } }
+
+/* ---------- 11e. Depoimentos ---------- */
+.testimonial { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius);
+               padding: 1.7rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+.testimonial__quote { font-size: 1.02rem; color: var(--c-text); margin-bottom: 1.1rem; position: relative; }
+.testimonial__quote::before { content: "\201C"; font-family: var(--font-display); font-size: 2.4rem; color: var(--c-teal);
+                              line-height: 0; vertical-align: -.35em; margin-right: .15em; }
+.testimonial__author { margin-top: auto; font-weight: 600; color: var(--c-petrol); font-size: .95rem; }
+.testimonial__author span { display: block; font-weight: 400; color: var(--c-muted); font-size: .85rem; }
+
+/* ---------- 11f. Contato + formulário ---------- */
+.contato__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
+.contato__list { display: grid; gap: 1.1rem; margin: 1.4rem 0 0; }
+.contato__item { display: flex; gap: .9rem; align-items: flex-start; }
+.contato__item .ico-wrap { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+                           background: var(--c-teal-100); color: var(--c-teal-600); }
+.contato__item .ico-wrap svg { width: 22px; height: 22px; }
+.contato__item strong { display: block; color: var(--c-petrol); }
+.contato__item a { color: var(--c-text); }
+.contato__item a:hover { color: var(--c-teal-600); }
+
+.form { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius);
+        padding: 1.8rem; box-shadow: var(--shadow-sm); }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-weight: 600; font-size: .9rem; color: var(--c-petrol); margin-bottom: .4rem; }
+.field input, .field select, .field textarea {
+  width: 100%; font: inherit; color: var(--c-text); padding: .8rem .9rem;
+  border: 1px solid var(--c-border); border-radius: var(--radius-sm); background: #fff; transition: border-color var(--transition);
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--c-teal); }
+.field textarea { resize: vertical; min-height: 96px; }
+.form .btn { width: 100%; justify-content: center; }
+.form__note { font-size: .82rem; color: var(--c-muted); margin: .8rem 0 0; text-align: center; }
+@media (max-width: 860px){ .contato__grid { grid-template-columns: 1fr; } }
+
+/* ---------- 11g. Mapa (facade — carrega só ao clique) ---------- */
+.map-embed { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--c-border); line-height: 0; }
+.map-embed iframe { width: 100%; height: 340px; border: 0; display: block; }
+.map-facade { border-radius: var(--radius); border: 1px solid var(--c-border); box-shadow: var(--shadow-sm);
+  background:
+    radial-gradient(700px 300px at 75% 10%, rgba(73,170,161,.18), transparent 60%),
+    linear-gradient(180deg, #eef4f5, #ffffff);
+  display: grid; place-items: center; text-align: center; padding: clamp(2.5rem, 6vw, 4rem) 1.5rem; }
+.map-facade__inner { max-width: 460px; }
+.map-facade .pin { width: 56px; height: 56px; color: var(--c-teal-600); margin: 0 auto 1rem; }
+.map-facade h3 { margin-bottom: .4rem; }
+.map-facade__actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.4rem; }
 
 /* ---------- 12. Utilitários ---------- */
 .text-center { text-align: center; }

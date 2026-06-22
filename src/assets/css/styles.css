@@ -152,7 +152,10 @@ p  { margin-bottom: 1rem; }
 .hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
 .hero__title { margin-bottom: 1rem; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.8rem; }
-.hero__media img { border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; aspect-ratio: 4/5; width: 100%; }
+.hero__media img { border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; aspect-ratio: 4/5; width: 100%; height: auto; }
+.hero__trust { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin-top: 1.8rem; }
+.hero__trust li { display: flex; align-items: center; gap: .45rem; font-size: .92rem; font-weight: 500; color: var(--c-petrol); }
+.hero__trust svg { width: 18px; height: 18px; color: var(--c-teal-600); flex: none; }
 @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } .hero__media { order: -1; max-width: 420px; } }
 
 /* ---------- 8. Cards ---------- */
@@ -178,9 +181,10 @@ p  { margin-bottom: 1rem; }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
 .footer__grid h4 { color: #fff; font-size: 1rem; margin-bottom: .9rem; }
 .footer img.logo { height: 54px; margin-bottom: 1rem; }
-.footer__bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.3rem; display: flex;
+.footer__bottom { padding-top: .6rem; display: flex;
                   flex-wrap: wrap; gap: .6rem 1.2rem; justify-content: space-between; font-size: var(--fs-small); }
 .footer__crefito { font-weight: 600; color: #fff; }
+.footer__disclaimer { font-size: .8rem; color: #92a6b4; border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.2rem; margin: 0 0 .4rem; }
 @media (max-width: 700px){ .footer__grid { grid-template-columns: 1fr; } }
 
 /* ---------- 10. WhatsApp flutuante ---------- */
@@ -311,6 +315,12 @@ p  { margin-bottom: 1rem; }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { padding-bottom: 1rem; margin: 0; color: var(--c-muted); }
 
+.related { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
+.related h3 { font-size: 1.1rem; margin-bottom: .9rem; }
+.related ul { list-style: none; margin: 0; display: grid; gap: .7rem; }
+.related li { margin: 0; padding: 0; }
+.related a { font-weight: 600; color: var(--c-petrol); }
+.related a:hover { color: var(--c-teal-600); }
 .author-box { display: flex; gap: 1.1rem; align-items: center; background: var(--c-teal-100);
               border-radius: var(--radius); padding: 1.4rem; margin-top: 2.5rem; }
 .author-box img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }

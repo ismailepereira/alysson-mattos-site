@@ -7,11 +7,14 @@
 
 > **✅ Decisões confirmadas (2026-06-22):** site **one-page + blog**; hospedagem
 > **GitHub Pages** com deploy automático; **autorizada** a reescrita ética do diferencial.
-> **Progresso:** Fase 1 (Fundação) ✅ · Fase 2 (Copy) ✅ · Fase 3 (Build da home) ✅ ·
-> Fase 4 (Blog) ✅ — índice + 3 artigos (dor lombar, joelho, ativa x passiva) com SEO/FAQ/schema.
+> **Progresso:** Fase 1 ✅ · Fase 2 ✅ · Fase 3 ✅ · Fase 4 (Blog) ✅ ·
+> Fase 5 (SEO/a11y/perf) ✅ — schema `Physiotherapy`, OG image dedicada, selo de autoridade no
+> hero, links internos entre artigos, imagens otimizadas (+ foto do Sobre clareada), nota LGPD
+> e aviso médico. Guia do Google Business em `docs/google-business.md`.
 > **No ar:** https://ismailepereira.github.io/alysson-mattos-site/ (Pages via branch gh-pages).
 > Repo: github.com/ismailepereira/alysson-mattos-site.
-> **Próxima:** Fase 5 (SEO técnico + acessibilidade + performance).
+> **Pendente do cliente:** fotos/depoimentos reais · @ Instagram · horário · deploy automático
+> (precisa `gh auth refresh -s workflow`) · domínio próprio · Google Business.
 
 ---
 

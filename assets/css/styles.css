@@ -262,6 +262,61 @@ p  { margin-bottom: 1rem; }
 .map-facade h3 { margin-bottom: .4rem; }
 .map-facade__actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.4rem; }
 
+/* ---------- 11h. Blog — índice ---------- */
+.blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--gap); }
+@media (max-width: 980px){ .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 680px){ .blog-grid { grid-template-columns: 1fr; } }
+.post-card { display: flex; flex-direction: column; background: var(--c-surface); border: 1px solid var(--c-border);
+             border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);
+             transition: transform var(--transition), box-shadow var(--transition); }
+.post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.post-card__body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.post-card__cat { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+                  color: var(--c-teal-600); margin-bottom: .6rem; }
+.post-card h3 { font-size: 1.18rem; margin-bottom: .6rem; }
+.post-card h3 a { color: var(--c-petrol); }
+.post-card h3 a:hover { color: var(--c-teal-600); }
+.post-card p { color: var(--c-muted); font-size: .96rem; flex: 1; }
+.post-card__more { margin-top: 1rem; font-weight: 600; color: var(--c-blue); font-size: .92rem; }
+
+/* ---------- 11i. Blog — artigo ---------- */
+.breadcrumb { font-size: .85rem; color: var(--c-muted); padding-top: 1.4rem; }
+.breadcrumb a { color: var(--c-muted); }
+.breadcrumb a:hover { color: var(--c-teal-600); }
+.post { max-width: 760px; margin-inline: auto; }
+.post__head { margin: 1.5rem 0 2rem; }
+.post__head h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: .8rem; }
+.post__meta { display: flex; flex-wrap: wrap; gap: .4rem 1rem; color: var(--c-muted); font-size: .9rem; align-items: center; }
+.post__meta .dot { color: var(--c-border); }
+.post-body { font-size: 1.08rem; }
+.post-body h2 { font-size: 1.55rem; margin: 2.2rem 0 .8rem; }
+.post-body h3 { font-size: 1.2rem; margin: 1.6rem 0 .6rem; }
+.post-body p { margin-bottom: 1.1rem; }
+.post-body ul, .post-body ol { margin: 0 0 1.2rem 1.2rem; }
+.post-body ul { list-style: disc; } .post-body ol { list-style: decimal; }
+.post-body li { margin-bottom: .5rem; padding-left: .2rem; }
+.post-body blockquote { border-left: 4px solid var(--c-teal); background: var(--c-teal-100);
+  padding: 1rem 1.2rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 1.4rem 0; color: var(--c-petrol); }
+
+.post-cta { background: var(--c-petrol); color: #dfe8ee; border-radius: var(--radius); padding: 1.6rem 1.8rem;
+            margin: 2rem 0; text-align: center; }
+.post-cta h3 { color: #fff; margin-bottom: .8rem; }
+.post-cta .btn { margin-top: .4rem; }
+
+.faq { margin-top: 1rem; }
+.faq details { border: 1px solid var(--c-border); border-radius: var(--radius-sm); padding: .2rem 1.1rem; margin-bottom: .8rem; background: var(--c-surface); }
+.faq summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--c-petrol); padding: .9rem 0; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--c-teal-600); font-size: 1.3rem; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding-bottom: 1rem; margin: 0; color: var(--c-muted); }
+
+.author-box { display: flex; gap: 1.1rem; align-items: center; background: var(--c-teal-100);
+              border-radius: var(--radius); padding: 1.4rem; margin-top: 2.5rem; }
+.author-box img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
+.author-box strong { color: var(--c-petrol); display: block; }
+.author-box p { margin: .2rem 0 0; font-size: .92rem; color: var(--c-muted); }
+
 /* ---------- 12. Utilitários ---------- */
 .text-center { text-align: center; }
 .mt-1 { margin-top: 1rem; } .mt-2 { margin-top: 2rem; }
